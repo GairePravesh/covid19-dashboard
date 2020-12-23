@@ -203,8 +203,8 @@ def filter_by_age():
     data = r.json()
     return data[1:-1]
 
-def filter_by_districts():
-    # in the form of list like label and cases 
-    # [['rupandehi',100],[...],[....],['kathmandu',5424]]
-    r = requests.get('http://127.0.0.1:5000/districts').json()
-    return r
+# def filter_by_districts():
+#     # in the form of list like label and cases 
+#     # [['rupandehi',100],[...],[....],['kathmandu',5424]]
+#     r = requests.get('http://127.0.0.1:5000/districts').json()
+#     return r

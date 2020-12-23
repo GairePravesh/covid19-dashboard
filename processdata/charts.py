@@ -14,6 +14,7 @@ class Graph(TemplateView):
         context = super(Graph, self).get_context_data(**kwargs)
         labels = ["Female", "Male"]
         values = filter_by_gender()
+        # print(values)
         fig = go.Figure(data=[go.Pie(labels=labels, values=values)])
         div = fig.to_html(full_html=False)
         context["gendergraph"] = div
@@ -26,7 +27,7 @@ class Graph(TemplateView):
             layout=go.Layout(xaxis_title="Age", yaxis_title="Cases"),
         )
         div = fig.to_html(full_html=False)
-
+        context["agegraph"] = div
         #  District bar graph
 
         # d = filter_by_districts()
