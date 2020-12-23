@@ -1,0 +1,87 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Maps {% endblock title %}
+
+{% block content %}
+<div class="container-fluid pt-6 bg-secondary">
+    <h2>Graphs on the basis of</h2>
+    <div class="row">
+        <div class="col-xl-12 mb-5 mb-xl-0">
+
+            <div class="card shadow fade-in-bottom">
+                <div class="card-body plotly">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.54.6/plotly.min.js"></script>
+
+                    <div class="chart">
+                        {% autoescape off %}
+                        {% if gendergraph %}
+                        <div>
+                            {{ gendergraph }}
+                        </div>
+                        {% endif %}
+
+                        {% endautoescape %}
+                    </div>
+                </div>
+                <div style="position: absolute; padding:1.25rem 1.5rem;">
+                    <h2 class="text-uppercase text-muted ls-1 mb-1">Gender</h2>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-12 mt-5 mb-xl-0">
+            <div class="card shadow fade-in-bottom">
+                <div class="card-body plotly">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.54.6/plotly.min.js"></script>
+
+                    <div class="chart">
+                        {% autoescape off %}
+                        {% if agegraph %}
+                        <div>
+                            {{ agegraph }}
+                        </div>
+                        {% endif %}
+
+                        {% endautoescape %}
+                    </div>
+                </div>
+                <div style="position: absolute; padding:1.25rem 1.5rem;">
+                    <h2 class="text-uppercase text-muted ls-1 mb-1">Age</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-xl-12 mt-5 mb-xl-0">
+            <div class="card shadow fade-in-bottom">
+                <div class="card-body plotly">
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/1.54.6/plotly.min.js"></script>
+
+                    <div class="chart">
+                        {% autoescape off %}
+                        {% if districtgraph %}
+                        <div>
+                            {{ districtgraph }}
+                        </div>
+                        {% endif %}
+
+                        {% endautoescape %}
+                    </div>
+                </div>
+                <div style="position: absolute; padding:1.25rem 1.5rem;">
+                    <h2 class="text-uppercase text-muted ls-1 mb-1">District</h2>
+                </div>
+            </div>
+        </div> -->
+    </div>
+    {% include "includes/footer.html" %}
+</div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}
+<script>
+    $('.nav-item a').removeClass('active');
+    $('.maps-item a').addClass('active');
+</script>
+{% endblock javascripts %}
