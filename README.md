@@ -1,2 +1,4 @@
 # covid19-dashboard
-[Working] dbms project - COVID-19 Visualization Dashboard
+dbms project - COVID-19 Visualization Dashboard
+
+jhau layo yar jaso taso project bujaiyo chitika parera frontend, dbms kehi xaina 
